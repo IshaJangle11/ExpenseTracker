@@ -1,0 +1,230 @@
+:root {
+    --muted: #667085;
+    --line: #e5e7eb;
+    --surface: #ffffff;
+    --accent: #0f766e;
+    --accent-dark: #115e59;
+    --danger: #b42318;
+    --page: #f4f7f6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 20px;
+    background: radial-gradient(circle at top right, #d9f1ed 0, transparent 32%), var(--page);
+    color: #172033;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: #172033;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+#expenseForm,
+#expenseList {
+    width: min(100%, 760px);
+    margin-right: auto;
+    margin-left: auto;
+    background: var(--surface);
+    border: 1px solid rgba(15, 118, 110, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+}
+
+#expenseForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+    padding: 26px;
+}
+
+#expenseForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+#expenseForm input,
+#expenseForm select,
+#expenseForm button {
+    width: 100%;
+    min-height: 46px;
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    font: 1rem Arial, sans-serif;
+}
+
+#expenseForm input:focus,
+#expenseForm select:focus {
+    outline: 3px solid rgba(15, 118, 110, 0.16);
+    border-color: var(--accent);
+}
+
+#expenseForm br {
+    display: none;
+}
+
+#expenseForm button {
+    grid-column: 1 / -1;
+    margin: 4px 0 0;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+#expenseForm button:hover,
+#expenseForm button:focus-visible {
+    background: var(--accent-dark);
+}
+
+#expenseForm button:active {
+    transform: translateY(1px);
+}
+
+label[for="FilterCategory"] {
+    display: block;
+    width: min(100%, 760px);
+    margin: 24px auto 8px;
+    color: var(--muted);
+    font: 700 0.78rem Arial, sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+#filterCategory {
+    display: block;
+    width: min(100%, 760px);
+    min-height: 46px;
+    margin: 0 auto;
+    padding: 11px 13px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--surface);
+    color: #172033;
+    font: 1rem Arial, sans-serif;
+}
+
+#filterCategory:focus {
+    outline: 3px solid rgba(15, 118, 110, 0.16);
+    border-color: var(--accent);
+}
+
+body > p {
+    width: min(100%, 760px);
+    margin: 24px auto;
+    padding: 20px 24px;
+    border-left: 5px solid var(--accent);
+    border-radius: 10px;
+    background: #e5f4f1;
+    color: var(--accent-dark);
+    font: 700 1.1rem Arial, sans-serif;
+}
+
+#totalExpenses {
+    font-size: 1.45rem;
+}
+
+h2 {
+    width: min(100%, 760px);
+    margin: 34px auto 14px;
+    font-size: 1.7rem;
+}
+
+#expenseList {
+    padding: 8px 22px;
+}
+
+#expenseList > div {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#expenseList > div:last-child {
+    border-bottom: 0;
+}
+
+#expenseList p {
+    margin: 0;
+    color: var(--muted);
+    font: 0.95rem/1.7 Arial, sans-serif;
+}
+
+.edit-btn,
+.delete-btn {
+    margin-left: 8px;
+    padding: 7px 11px;
+    border: 0;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    font: 700 0.72rem Arial, sans-serif;
+    letter-spacing: 0.04em;
+}
+
+.edit-btn {
+    background: #2563eb;
+}
+
+.delete-btn {
+    background: var(--danger);
+}
+
+.edit-btn:hover,
+.edit-btn:focus-visible {
+    background: #1d4ed8;
+}
+
+.delete-btn:hover,
+.delete-btn:focus-visible {
+    background: #912018;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 28px 14px;
+    }
+
+    #expenseForm {
+        display: block;
+        padding: 20px;
+    }
+
+    #expenseList {
+        padding: 6px 16px;
+    }
+
+    #expenseList p {
+        line-height: 2.1;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        margin-top: 5px;
+    }
+}
