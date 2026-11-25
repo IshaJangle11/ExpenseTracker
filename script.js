@@ -144,10 +144,10 @@ function clearStorageError() {
 }
 
 function formatMoney(value) {
-    return Number(value).toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR'
+    }).format(Number(value) || 0);
 }
 
 function formatDate(value) {
@@ -215,7 +215,7 @@ function displayExpenses() {
 
         const amount = document.createElement('div');
         amount.className = 'expense-amount';
-        amount.append(document.createTextNode(`$${formatMoney(expense.amount)}`));
+        amount.append(document.createTextNode(formatMoney(expense.amount)));
 
         const actions = document.createElement('div');
         actions.className = 'expense-actions';

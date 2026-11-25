@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">Personal finance</p>
+                <h1>Dashboard</h1>
+            </div>
+            <a class="button button-secondary" href="index.html">Back to expenses</a>
+        </header>
+
+        <section class="summary-grid" aria-label="Expense summary">
+            <article class="summary-card summary-card-primary">
+                <span>Total expenses</span>
+                <strong id="totalExpenses">₹0.00</strong>
+            </article>
+            <article class="summary-card">
+                <span>This month</span>
+                <strong id="monthlyExpenses">₹0.00</strong>
+            </article>
+            <article class="summary-card">
+                <span>Transactions</span>
+                <strong id="expenseCount">0</strong>
+            </article>
+            <article class="summary-card">
+                <span>Highest expense</span>
+                <strong id="highestExpense">₹0.00</strong>
+            </article>
+        </section>
+
+        <p class="storage-note">Dashboard data is read from this browser's IndexedDB.</p>
+        <p id="dashboardStatus" class="storage-status" role="alert" hidden></p>
+
+        <section class="dashboard-grid" aria-label="Spending insights">
+            <article class="dashboard-card">
+                <div class="panel-heading">
+                    <h2>Spending by category</h2>
+                    <span class="dashboard-caption">This month</span>
+                </div>
+                <div id="categoryBreakdown" aria-live="polite"></div>
+            </article>
+            <article class="dashboard-card">
+                <div class="panel-heading">
+                    <h2>Recent expenses</h2>
+                    <span class="dashboard-caption">Latest 5</span>
+                </div>
+                <div id="recentExpenses" aria-live="polite"></div>
+            </article>
+        </section>
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+</html>

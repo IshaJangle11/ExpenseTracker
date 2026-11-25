@@ -13,17 +13,20 @@
                 <p class="eyebrow">Personal finance</p>
                 <h1>Personal Finance Tracker</h1>
             </div>
-            <button id="clearExpenses" class="button button-danger" type="button">Clear all</button>
+            <nav class="header-actions" aria-label="Main navigation">
+                <a class="button button-secondary" href="dashboard.html">Dashboard</a>
+                <button id="clearExpenses" class="button button-danger" type="button">Clear all</button>
+            </nav>
         </header>
 
         <section class="summary-grid" aria-label="Expense summary">
             <article class="summary-card summary-card-primary">
                 <span>Total expenses</span>
-                <strong>$<span id="totalExpenses">0.00</span></strong>
+                <strong><span id="totalExpenses">₹0.00</span></strong>
             </article>
             <article class="summary-card">
                 <span>This month</span>
-                <strong>$<span id="monthlyExpenses">0.00</span></strong>
+                <strong><span id="monthlyExpenses">₹0.00</span></strong>
             </article>
             <article class="summary-card">
                 <span>Transactions</span>
@@ -31,7 +34,7 @@
             </article>
             <article class="summary-card">
                 <span>Highest expense</span>
-                <strong>$<span id="highestExpense">0.00</span></strong>
+                <strong><span id="highestExpense">₹0.00</span></strong>
             </article>
         </section>
 
